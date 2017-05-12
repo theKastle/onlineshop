@@ -1,0 +1,26 @@
+<form class="ui form" [formGroup]="orderDetail" (ngSubmit)="onSubmit()" novalidate>
+	<h4 class="ui dividing header">Shipping Information</h4>
+	<div class="field">
+		<label>Name</label>
+		<div class="one fields">
+			<div class="field">
+				<input class="form-control" formControlName="name" type="text" name="shipping[first-name]" placeholder="First Name">
+			</div>
+		</div>
+	</div>
+	<div class="field">
+		<label>Billing Address</label>
+		<div class="fields" formGroupName="address">
+			<div class="eight wide field">
+				<input class="form-control" formControlName="address" type="text" name="shipping[address]" placeholder="Street address">
+			</div>
+			<div class="four wide field">
+				<input class="form-control" formControlName="district" type="text" name="shipping[address-2]" placeholder="District">
+			</div>
+			<div class="four wide field">
+				<input class="form-control" formControlName="city" type="text" name="shipping[address-2]" placeholder="City">
+			</div>
+		</div>
+	</div>
+	<div class="ui button" tabindex="0">Submit Order</div>
+</form>

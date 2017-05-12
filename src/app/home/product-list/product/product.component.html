@@ -1,0 +1,54 @@
+<div class="ui small centered image">
+  <img [src]="product.imageUrl">
+</div>
+<div class="content">
+  <div class="header">{{product.name}}</div>
+  <div class="meta">
+    <a>{{product.category}}</a>
+  </div>
+  <div class="description">
+    {{product.description}}
+  </div>
+</div>
+<div class="extra content">
+
+  <!--<form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="hosted_button_id" value="JLRADKSWKTCXU">
+    <input type="hidden" name="item_number" [value]="product.id" />{{product.id}}
+    <input type="hidden" name="item_name" [value]="product.name">{{product.name}}
+    <input type="hidden" name="amount" [value]="product.price">{{product.price}}
+    <input type="image" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+  </form>-->
+
+
+  <form *ngIf="notAdminMode" target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
+
+    <!-- Identify your business so that you can collect the payments. -->
+    <input type="hidden" name="business" value="quangtien819-facilitator@gmail.com">
+
+    <!-- Specify a PayPal Shopping Cart Add to Cart button. -->
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="add" value="1">
+
+    <!-- Specify details about the item that buyers will purchase. -->
+    <input type="hidden" name="item_name" [value]="product.name">
+    <input type="hidden" name="amount" [value]="product.price">
+    <input type="hidden" name="currency_code" value="USD">
+
+    <!-- Display the payment button. -->
+    <input type="image" name="submit" src="https://www.paypalobjects.com/webstatic/en_US/i/btn/png/btn_addtocart_120x26.png"
+      alt="Add to Cart">
+    <img alt="" width="1" height="1" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif">
+  </form>
+
+  <button *ngIf="adminMode" [routerLink]="['/admin/product/', product.$key]" class="ui icon button"><i class="edit icon"></i>
+Edit</button>
+
+
+  <!--<button (click)="addToCart(product)" class="ui icon primary button">
+    <i class="shop icon"></i>Add to cart
+  </button>-->
+
+</div>

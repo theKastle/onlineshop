@@ -1,0 +1,40 @@
+<!--Cannot use href, or else the app state will be reset !!!!!-->
+
+<div class="ui pointing secondary menu">
+  <a class="item" routerLink="" routerLinkActive="active">
+    Home
+  </a>
+  <a class="item" routerLink="/food" routerLinkActive="active">
+    Food
+  </a>
+  <a class="item" routerLink="/drink" routerLinkActive="active">
+    Drink
+  </a>
+  <a class="item" routerLink="/laptop" routerLinkActive="active">
+    Laptop
+  </a>
+  <div class="item">
+    <div class="ui icon input">
+      <input type="text" placeholder="Search...">
+      <i class="search link icon"></i>
+    </div>
+  </div>
+  <a class="ui right item" routerLink="/admin" *ngIf="adminMode" routerLink="/admin/new">
+    <button class="ui green button">New Product</button> 
+  </a>
+  <a class="ui right item" routerLink="/admin" *ngIf="!adminMode" (click)="turnOnAdmin()">
+    <button class="ui blue button">Admin</button> 
+  </a>
+  <a class="ui right item" routerLink="" *ngIf="adminMode" (click)="turnOffAdmin()">
+    <button class="ui blue button">Get out</button> 
+  </a>
+</div>
+
+<!--<app-checkout-steps [currentStep]="currentStep" *ngIf="currentUrl && isCheckoutRoute()"></app-checkout-steps>-->
+
+
+<div class="ui segment">
+  <div class="ui container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

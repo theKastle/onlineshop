@@ -1,0 +1,36 @@
+<form class="ui form" [formGroup]="form" novalidate>
+  <div class="ui image-upload segment">
+    <img style="margin-bottom: 10px" class="ui medium rounded image" [src]="imageUrl">
+    <input id="file" name="file" type="file">
+    <button class="ui button" (click)="upload()" type="button" *ngIf="dataArrived">Upload</button>
+    <div *ngFor="let item of files" class="ui progress">
+      <div class="bar" style="transition-duration: 108ms" [ngStyle]="{ 'width': item.progress + '%' }">
+        <div class="progress"></div>
+      </div>
+      <div class="label">Uploading Files</div>
+    </div>
+  </div>
+  <div class="field">
+    <label>Name</label>
+    <input type="text" class="form-control" formControlName="name" />
+  </div>
+  <div class="field">
+    <label>Category</label>
+    <input type="text" class="form-control" formControlName="category" />
+  </div>
+  <div class="field">
+    <label>Price</label>
+    <input type="text" class="form-control" formControlName="price" />
+  </div>
+  <div class="field">
+    <label>Description</label>
+    <input type="text" class="form-control" formControlName="description" />
+  </div>
+  <div class="field">
+    <label>Image Url</label>
+    <input disable="true" type="text" class="form-control" formControlName="imageUrl" />
+  </div>
+  <button (click)="save()" class="ui button">Save</button>
+  <button (click)="delete()" class="ui button">Delete</button>
+  <!--<button (click)="create()" class="ui button" *ngIf="new">Create</button>-->
+</form>

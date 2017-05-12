@@ -1,0 +1,31 @@
+.container {
+    padding: 5em 0em;
+}
+
+.image-upload{  
+    float: right;
+    margin-top: 23px !important;
+    margin-bottom: -300px !important;
+    height: 263px;
+    width: 315px;
+}
+
+.footer {
+    position: fixed !important;
+    background: #E6E6E6 !important;
+    bottom: 0px;
+    height: 75px;
+    width: 100%;
+}
+
+.save-button{
+    position: fixed;
+    right: 10px;
+    bottom: 12px;
+}
+
+.cancel-button{
+    position: fixed;
+    right: 125px;
+    bottom: 12px;
+}

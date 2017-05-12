@@ -1,0 +1,20 @@
+<div class="ui three ordered steps">
+  <div class="step" [ngClass]="{'completed': isComplete('CART'), 'active': isAcive('cart')}">
+    <div class="content">
+      <div class="title">Confirm Cart</div>
+      <div class="description">Check your cart items</div>
+    </div>
+  </div>
+  <div class="step" [ngClass]="{'completed': isComplete('ORDER_DETAIL'), 'active': isAcive('order-detail')}">
+    <div class="content">
+      <div class="title">Enter Order Detail</div>
+      <div class="description">Provide us order detail</div>
+    </div>
+  </div>
+  <div class="step" [ngClass]="{'completed': isComplete('CHOOSE_PAYMENT'), 'active': isAcive('payment')}">
+    <div class="content">
+      <div class="title">Payment</div>
+      <div class="description">Choose your payment type</div>
+    </div>
+  </div>
+</div>

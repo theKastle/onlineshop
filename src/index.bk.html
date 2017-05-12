@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Frontend</title>
+  <base href="/">
+
+  <link rel="stylesheet" type="text/css" href="./assets/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
+  <script src="./assets/semantic.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+  <app-root>Loading...</app-root>
+  <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyA2goximoOxHcdp623XVU78jZpPMrWmCxY",
+      authDomain: "ngonlineshopping-66e1b.firebaseapp.com",
+      databaseURL: "https://ngonlineshopping-66e1b.firebaseio.com",
+      projectId: "ngonlineshopping-66e1b",
+      storageBucket: "ngonlineshopping-66e1b.appspot.com",
+      messagingSenderId: "211986517416"
+    };
+    firebase.initializeApp(config);
+
+  </script>
+  <script>
+    // if ('serviceWorker' in navigator) {
+    //   navigator.serviceWorker.register('/service-worker.js').then(function (registration) {
+    //     console.log('Service Worker registered');
+    //   }).catch(function (err) {
+    //     console.log('Service Worker registration failed: ', err);
+    //   });
+    //}
+  </script>
+</body>
+
+</html>
